@@ -1,0 +1,69 @@
+/* CampDetails.css */
+.camp-detail__container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+}
+
+.camp-detail__title {
+    color: #2c3e50;
+}
+
+.camp-detail__type,
+.camp-detail__date,
+.camp-detail__description,
+.camp-detail__address,
+.camp-detail__service-item {
+    color: #34495e;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.camp-detail__services-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.camp-detail__buttons {
+    margin-top: 20px;
+}
+
+.camp-detail__buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.camp-detail__buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+.camp-detail__edit-button,
+.camp-detail__delete-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.camp-detail__delete-button {
+    background-color: #dc3545; /* Different color for the delete button */
+}
+
+.camp-detail__edit-button:hover,
+.camp-detail__delete-button:hover {
+    opacity: 0.85;
+}

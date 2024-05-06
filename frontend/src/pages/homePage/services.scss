@@ -1,0 +1,111 @@
+.services_container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;// Changed from row to column
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .services_container h2 {
+    width: 90%;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .services_header {
+    margin: 30px;
+  }
+  .services_container h2 span {
+    margin-right: 10px;
+  }
+  .service_info_container {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .service_image_details {
+    width: 200px; /* Makes the image responsive within its container */
+    height: 150px;
+    object-fit: cover; /* Cover the div without losing aspect ratio */
+    object-position: center; 
+  }
+  .service_info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 270px;
+    width: 350px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 25px 0 #cbcbcbbf;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    background: transparent;
+    backdrop-filter: blur(5px);
+  }
+  .service_info:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  .service_info:active {
+    transform: scale(0.95);
+  }
+  .service_detail_info {
+    font-size: 18px;
+   
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #344c5d;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .service_info {
+      width: 430px;
+      height: 272px;
+      justify-content: center;
+    }
+    .service_info_container {
+      gap: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .service_info_container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-wrap: wrap;
+      justify-items: stretch;
+      justify-content: center;
+      margin-bottom: 30px;
+      gap: 5px;
+    }
+    .service_info {
+      width: 382px;
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    .service_info {
+      width: 90%;
+      height: 312px;
+    }
+    .service_detail_info {
+      width: 75%;
+    }
+    .services_header {
+      margin-top: 45px;
+      margin-bottom: 50px;
+    }
+    .service_info_container {
+      height: 100%;
+    }
+  }
+  

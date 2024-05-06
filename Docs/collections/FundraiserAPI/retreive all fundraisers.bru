@@ -1,0 +1,22 @@
+meta {
+  name: retreive all fundraisers
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:3000/fundraisers
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Support Education for Underprivileged Children",
+    "description": "Help us provide quality education to children in need.",
+    "goalAmount": 10000,
+    "currentAmount": 5000,
+    "associatedCampID": 1234
+  }
+  
+}

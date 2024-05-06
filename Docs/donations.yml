@@ -1,0 +1,248 @@
+openapi: 3.1.0
+info:
+  title: Health Camp Fund Raisers API
+  description: API for managing health camp FundRaisers and donations
+  version: 'v1.0'
+servers:
+  - url: http://localhost:3001
+paths:
+  /fundraisers:
+    post:
+      summary: Create a new fundraiser
+      description: Endpoint to create a new fundraiser.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FundraiserInput'
+      responses:
+        '201':
+          description: Fundraiser created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fundraiser'
+    get:
+      summary: Retrieve all fundraisers
+      description: Endpoint to retrieve details of all fundraisers.
+      responses:
+        '200':
+          description: Fundraisers retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fundraiser'
+        '404':
+          description: No fundraisers found
+          content:
+            application/json:
+              example:
+                code: 404
+                message: No fundraisers found
+
+  /fundraisers/{fundraiserID}:
+    get:
+      summary: Retrieve a specific fundraiser
+      description: Endpoint to retrieve details of a specific fundraiser.
+      parameters:
+        - in: path
+          name: fundraiserID
+          required: true
+          description: The ID of the fundraiser to retrieve.
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '200':
+          description: Fundraiser details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fundraiser'
+        '404':
+          description: Fundraiser not found
+          content:
+            application/json:
+              example:
+                code: 404
+                message: Fundraiser with ID 12345 not found
+
+    put:
+      summary: Update a specific fundraiser
+      description: Endpoint to update details of a specific fundraiser.
+      parameters:
+        - in: path
+          name: fundraiserID
+          required: true
+          description: The ID of the fundraiser to update.
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FundraiserInput'
+      responses:
+        '200':
+          description: Fundraiser updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fundraiser'
+        '400':
+          description: Bad request - Invalid input data
+          content:
+            application/json:
+              example:
+                code: 400
+                message: Bad request - Invalid input data
+        '404':
+          description: Fundraiser not found
+          content:
+            application/json:
+              example:
+                code: 404
+                message: Fundraiser with ID 12345 not found
+        '500':
+          description: Internal server error - Something went wrong on the server side
+          content:
+            application/json:
+              example:
+                code: 500
+                message: Sorry we are working on the internal Server error
+
+    delete:
+      summary: Delete a specific fundraiser
+      description: Endpoint to delete a specific fundraiser.
+      parameters:
+        - in: path
+          name: fundraiserID
+          required: true
+          description: The ID of the fundraiser to delete.
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '204':
+          description: Fundraiser deleted successfully
+          content:
+            application/json:
+              example:
+                code: 204
+                message: Fundraiser 1234 deleted successfully
+
+  /fundraisers/{fundraiserID}/donate:
+    post:
+      summary: Donate to a fundraiser
+      description: Endpoint to allow users to donate to a specific fundraiser.
+      parameters:
+        - in: path
+          name: fundraiserID
+          required: true
+          description: The ID of the fundraiser to donate to.
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  format: double
+                  description: The amount to donate.
+                  examples: 
+                    - 50.00
+      responses:
+        '200':
+          description: Donation successful
+          content:
+            application/json:
+              example:
+                code: 200
+                message: Donation is successful. Thank you!
+        '400':
+          description: Bad request - Invalid input data
+          content:
+            application/json:
+              example:
+                code: 400
+                message: Bad request - Invalid input data
+        '404':
+          description: Fundraiser not found
+          content:
+            application/json:
+              example:
+                code: 404
+                message: Fundraiser with ID 12345 not found
+        '500':
+          description: Internal server error - Something went wrong on the server side
+          content:
+            application/json:
+              example:
+                code: 500
+                message: Sorry we are working on the internal Server error
+
+components:
+  schemas:
+    FundraiserInput:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the fundraiser.
+          examples: 
+            - Medical Supplies Fundraiser
+        description:
+          type: string
+          description: The description of the fundraiser.
+          examples: 
+            - Help us provide essential medical supplies to those in need.
+        goalAmount:
+          type: number
+          format: double
+          description: The fundraising goal amount.
+          examples: 
+            - 1000.00
+    Fundraiser:
+      type: object
+      properties:
+        fundraiserID:
+          type: integer
+          description: The ID of the fundraiser.
+          examples: 
+            - 12345
+        title:
+          type: string
+          description: The title of the fundraiser.
+          examples: 
+            - Medical Supplies Fundraiser
+        description:
+          type: string
+          description: The description of the fundraiser.
+          examples: 
+            - Help us provide essential medical supplies to those in need.
+        goalAmount:
+          type: number
+          format: double
+          description: The fundraising goal amount.
+          examples: 
+            - 1000.00
+        currentAmount:
+          type: number
+          format: double
+          description: The current amount raised for the fundraiser.
+          examples: 
+            - 0.00

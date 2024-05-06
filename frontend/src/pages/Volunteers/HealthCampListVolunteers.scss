@@ -1,0 +1,112 @@
+/* include the Google Font in index.html or equivalent */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.camp-cards-outercontainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-bar-container {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  padding: 8px;
+  width: 200px; /* Adjust width as needed */
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Round edges */
+  outline: none; /* Removes the default focus outline */
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+}
+
+.camp-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.camp-card {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.camp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.camp-card-title,
+.camp-card-date,
+.camp-card-description,
+.camp-card-address {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.camp-card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.camp-card-date {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.camp-card-description {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.camp-card-address {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.camp-card-button {
+  padding: 10px 20px;
+  margin-top: auto; /* Aligns the button to the bottom */
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase; /* Stylistic choice for buttons */
+  transition: 0.3s ease;
+}
+
+.camp-card-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .camp-cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    width: 150px; /* Smaller search bar on mobile */
+  }
+}

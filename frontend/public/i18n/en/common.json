@@ -1,0 +1,87 @@
+{
+    "appbar.title.label": "GlobeMediWatch",
+
+    "navbar.home.label": "HOME",
+    "navbar.donate.label": "DONATE",
+    "navbar.about.label": "ABOUT",
+    "navbar.login.label": "LOGIN/SIGNUP",
+    "navbar.patient.label": "PATIENT RECORDS",
+    "navbar.services.label": "SERVICES",
+    "navbar.fundraisers": "FUNDRAISERS",
+    "navbar.viewcamp.label": "VIEW CAMPS",
+    "navbar.logout": "LOGOUT",
+    "navbar.joincamps.label": "JOIN CAMPS",
+    "navbar.viewregisteredcamps.label": "VIEW REGISTERED CAMPS",
+    "navbar.profile": "PROFILE",
+    "navbar.schedulecamp.label": "SCHEDULE CAMPS",
+    "navbar.editcamp.label": "EDIT CAMPS",
+    "navbar.managecampservices.label": "MANAGE CAMP SERVICES",
+    "navbar.campdashboard.label": "CAMP DASHBOARD",
+
+    "content.title": "Healthcare for All, Anywhere",
+    "content.content": "Welcome to GlobeMediWatch – where every heartbeat counts. Our mission is simple: to deliver health care to your community's doorstep. Participate in local health camps, contribute to wellness drives, and access vital health checks—all within a few taps. Connect, care, and create a healthier community with us.",
+
+    "card1.title": "Accessible Care",
+    "card1.content": "Quality healthcare, now in your neighborhood",
+    "card1.button": "JOIN US",
+
+    "card2.title": "Community First",
+    "card2.content": "Join the wellness movement. Together, we thrive",
+    "card2.button": "GET INVOLVED",
+
+    "card3.title": "Elevate Well-being",
+    "card3.content":"Unlock a world of healthcare and services.",
+    "card3.button":"EXPLORE SERVICES",
+
+    "home.aboutus":"About US",
+    "home.aboutus.title": "A Community-Driven Platform for Health Camps and Wellness Activities",
+    "home.aboutus.content": "GlobeMediWatch is a health-focused community platform dedicated to organizing medical health camps that serve the public by offering basic health care services. With a commitment to health and wellness, our app facilitates a range of activities including blood donation drives and vital checks such as blood pressure and blood sugar monitoring.",
+    "home.aboutus.button": "Read More",
+
+    "home.ourservices": "Our Services",
+    "services.eyecamp": "Eye camp",
+    "services.eyecamp.detail":"Vision screening event",
+    "services.blooddonation":"Blood donation",
+    "services.blooddonation.detail":"Donate blood, save lives",
+    "services.bpcheck":"BP check",
+    "services.bpcheck.detail": "Blood pressure monitoring",
+    "services.diabetes":"Diabetes",
+    "services.diabetes.detail": "Managing blood sugar levels",
+    "services.dentalfilling":"Dental Fillings",
+    "services.dentalfilling.detail":"Repairing decay with blending fillings",
+    "services.cancerscreening":"Cancer screening",
+    "services.cancerscreening.detail": "Early detection saves lives",
+    "services.nutrition": "Nutrition",
+    "services.nutrition.detail": "Healthy eating habits",
+    "services.pediatrics":"Pediatrics",
+    "services.pediatrics.detail": "Child healthcare services",
+
+    "Upcoming Camps": "Upcoming Camps",
+    "camps.button": "CALL OFFICE",
+
+    "Fundraisers": "Fundraisers",
+    "Goal Amount":"Goal Amount",
+    "Current Amount": "Current Amount",
+    "Donate to": "Donate to",
+    "Donate": "Donate",
+
+    "about.welcome": "Welcome to GlobeMediWatch",
+    "about.welcome.title": "A Community-Driven Platform for Health Camps and Wellness Activities.",
+    "about.welcome.content": "Your support enables us to reach more people in need and make a meaningful impact on their lives.By donating to GlobeMediWatch, you contribute to the well-being of individuals and communities, helping us build a healthier future for all.",
+    "about.welcome.content2": " Together, we can make a difference. Join us in our mission to promote health and wellness for everyone, everywhere.",
+    "about.welcome.content3": "Contribute to the betterment of the society.",
+    "about.donations":"Donations",
+    "about.healthorg":"Health Organizations",
+    "about.volunteer":"Volunteers",
+
+    "footer.content":"Join GlobeMediWatch and contribute to the health of the world.",
+    "footer.contentline2": "Your contribution can save lives",
+    "footer.content.label":"Contact:",
+    "footer.address": "70 Forsyth St, Boston, MA 02115",
+    "footer.services": "SERVICES",
+    "footer.healthcamps": "CAMPS",
+    "lowerfooter": "All Rights Reserved",
+
+    "Email": "Email"
+    
+}

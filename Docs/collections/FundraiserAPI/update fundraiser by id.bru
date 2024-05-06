@@ -1,0 +1,22 @@
+meta {
+  name: update fundraiser by id
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:3000/fundraisers/organization/661ee243d978557c0e46c751
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Support Education for Underprivileged Children",
+    "description": "Help us provide quality education to children in need.",
+    "goalAmount": 10000,
+    "currentAmount": 5000,
+    "associatedCampID": "661ee243d978557c0e46c751"
+  }
+  
+}

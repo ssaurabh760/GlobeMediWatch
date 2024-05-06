@@ -1,0 +1,19 @@
+meta {
+  name: donate to fundraiser by id
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3000/fundraisers/6609f5c3e89127eb8ca42915/donate
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "amount": 1000
+    
+  }
+  
+}

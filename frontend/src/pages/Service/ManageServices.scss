@@ -1,0 +1,344 @@
+/**
+ * Primary color variable
+ */
+ $primary-color: #1a237e;
+
+ /**
+  * Secondary color variable
+  */
+ $secondary-color: #3949ab;
+ 
+ /**
+  * Background color variable
+  */
+ $background-color: #f8f8f8;
+ 
+ /**
+  * Text color variable
+  */
+ $text-color: #555;
+ 
+ /**
+  * Alert color variable
+  */
+ $alert-color: #f44336;
+ 
+ /**
+  * Mixin for flexbox centering
+  */
+ @mixin flex-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ /**
+  * Mixin for box shadow
+  * @param {string} $shadow - The box shadow value
+  */
+ @mixin box-shadow($shadow) {
+   box-shadow: $shadow;
+ }
+ 
+ /**
+  * Mixin for transition
+  * @param {string} $property - The property to apply the transition to
+  * @param {string} $duration - The duration of the transition
+  * @param {string} $timing-function - The timing function of the transition
+  */
+ @mixin transition($property, $duration, $timing-function) {
+   transition: $property $duration $timing-function;
+ }
+ 
+ /**
+  * Camp services container
+  */
+ .camp-services {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
+ }
+ 
+ /**
+  * Title
+  */
+ .title {
+   font-size: 32px;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 40px;
+   color: $primary-color;
+ }
+ 
+ /**
+  * Content container
+  */
+ .content {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+ }
+ 
+ /**
+  * Add service section
+  */
+ .add-service {
+   flex: 1;
+   padding: 20px;
+   background-color: $background-color;
+   border-radius: 8px;
+   @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+   margin-right: 20px;
+ 
+   h2 {
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+     color: $primary-color;
+   }
+ 
+   input,
+   textarea {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 20px;
+     font-size: 16px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+   }
+ 
+   textarea {
+     height: 100px;
+   }
+ }
+ 
+ /**
+  * Form actions container
+  */
+ .form-actions {
+   display: flex;
+   justify-content: space-between;
+ 
+   button {
+     @include flex-center;
+     padding: 10px 20px;
+     font-size: 16px;
+     font-weight: bold;
+     color: #fff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     @include transition(background-color, 0.3s, ease);
+ 
+     svg {
+       margin-right: 5px;
+     }
+   }
+ }
+ 
+ /**
+  * Add button
+  */
+ .add-button {
+   background-color: $secondary-color;
+ 
+   &:hover {
+     background-color: $primary-color;
+   }
+ }
+ 
+ /**
+  * Update button
+  */
+ .update-button {
+   background-color: #5c6bc0;
+ 
+   &:hover {
+     background-color: $primary-color;
+   }
+ }
+ 
+ /**
+  * Clear button
+  */
+ .clear-button {
+   background-color: #ccc;
+ 
+   &:hover {
+     background-color: #999;
+   }
+ }
+ 
+ /**
+  * Services section
+  */
+ .services {
+   flex: 1;
+   padding: 20px;
+   background-color: #fff;
+   border-radius: 8px;
+   @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+ 
+   h2 {
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+     color: $primary-color;
+   }
+ }
+ 
+ /**
+  * Service list
+  */
+ .service-list {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   height: 600px;
+   overflow-y: auto;
+ 
+   &.scrollable {
+     max-height: 600px;
+     overflow-y: auto;
+   }
+ }
+ 
+ /**
+  * Service item
+  */
+ .service-item {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   margin-bottom: 20px;
+   background-color: $background-color;
+   border-radius: 8px;
+   @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+   @include transition(transform, 0.3s, ease);
+ 
+   &:hover {
+     transform: translateY(-5px);
+   }
+ 
+   .service-info {
+     flex: 1;
+     margin-right: 20px;
+ 
+     h3 {
+       font-size: 20px;
+       font-weight: bold;
+       margin-bottom: 10px;
+       color: $secondary-color;
+     }
+ 
+     p {
+       color: $text-color;
+     }
+   }
+ 
+   &.fade-in {
+     animation: fadeIn 0.5s ease-in-out;
+   }
+ 
+   &.fade-out {
+     animation: fadeOut 3s ease-in-out;
+   }
+ }
+ 
+ /**
+  * Service actions container
+  */
+ .service-actions {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+ 
+   button {
+     @include flex-center;
+     width: 40px;
+     height: 40px;
+     font-size: 16px;
+     color: #fff;
+     border: none;
+     border-radius: 50%;
+     cursor: pointer;
+     @include transition(background-color, 0.3s, ease);
+   }
+ }
+ 
+ /**
+  * Alert container
+  */
+ .alert-container {
+   position: fixed;
+   top: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 9999;
+ }
+ 
+ /**
+  * Edit button
+  */
+ .edit-button {
+   background-color: #5c6bc0;
+ 
+   &:hover {
+     background-color: $secondary-color;
+   }
+ }
+ 
+ /**
+  * Delete button
+  */
+ .delete-button {
+   background-color: $alert-color;
+ 
+   &:hover {
+     background-color: $secondary-color;
+   }
+ }
+ 
+ /**
+  * Media query for screens with a maximum width of 768px
+  */
+ @media screen and (max-width: 768px) {
+   .content {
+     flex-direction: column;
+   }
+ 
+   .add-service {
+     margin-right: 0;
+     margin-bottom: 20px;
+   }
+ }
+ 
+ /**
+  * Keyframe animation for fade in
+  */
+ @keyframes fadeIn {
+   0% {
+     opacity: 0;
+     transform: translateY(-20px);
+   }
+   100% {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ 
+ /**
+  * Keyframe animation for fade out
+  */
+ @keyframes fadeOut {
+   0% {
+     opacity: 1;
+     transform: translateX(0);
+   }
+   100% {
+     opacity: 0;
+     transform: translateX(-100%);
+   }
+ }

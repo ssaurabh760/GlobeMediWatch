@@ -1,0 +1,211 @@
+openapi: 3.1.0
+info:
+  title: The UserManagement API
+  description: The REST services for managing users.
+  version: 'v1.0'
+servers:
+  - url: http://localhost:3000
+paths:
+  /users:
+    post:
+      operationId: createUser
+      summary: Create a new user
+      description: Registers a new user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+      responses:
+        '201':
+          description: Successfully created user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad request due to invalid input.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      operationId: getAllUsers
+      summary: Retrieve all users
+      description: Retrieves a list of all registered users.
+      responses:
+        '200':
+          description: Successful operation, returns a list of users.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '500':
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /users/{userID}:
+    get:
+      operationId: getUserById
+      summary: Retrieve a specific user
+      description: Retrieves details of a specific user by their ID.
+
+      parameters:
+        - in: path
+          name: userID
+          description: The unique identifier of the user.
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: 123456
+      responses:
+        '200':
+          description: Successful operation, returns user details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      operationId: updateUser
+      summary: Update a specific user
+      description: Updates details of a specific user by their ID.
+      parameters:
+        - in: path
+          name: userID
+          description: The unique identifier of the user.
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: 123456
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+      responses:
+        '200':
+          description: User updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad request due to invalid input.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      operationId: deleteUser
+      summary: Delete a specific user
+      description: Deletes a specific user by their ID.
+      parameters:
+        - in: path
+          name: userID
+          description: The unique identifier of the user.
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: 123456
+      responses:
+        '204':
+          description: User deleted successfully.
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique identifier for the user.
+          examples:
+            - 123456
+        username:
+          type: string
+          description: Username of the user.
+          examples:
+            - charan
+
+            
+        email:
+          type: string
+          format: email
+          description: Email address of the user.
+          examples:
+            - charan@something.com
+ 
+              
+    UserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          description: Username of the user.
+          examples:
+            - john
+
+        email:
+          type: string
+          format: email
+          description: Email address of the user.
+          examples:
+            - john@something.com
+  
+        password:
+          type: string
+          format: password
+          description: Password for the user account.
+          examples:
+            - securePassword123
+
+      required:
+        - username
+        - email
+        - password
+        
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error code indicating the type of error.
+          examples:
+           - UserNotFound
+          
+    
+        message:
+          type: string
+          description: A message describing the error.
+          examples:
+            - The user with the specified ID was not found.
+       
+  
+

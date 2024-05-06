@@ -1,0 +1,71 @@
+.orgCampContainer {
+    
+    min-height: calc(100vh - 120px);// 100% of the viewport height minus 120px
+    flex-direction: column;// align children in a column
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.orgCampList {
+    display: flex;// align children in a row
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.orgCampCard {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;// add smooth transition
+    cursor: pointer;
+    padding: 20px;
+}
+
+.orgCampCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.orgCampDetails {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.orgInput, .orgTextarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.orgButton {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.orgButton:hover {
+    background-color: #0056b3;
+}
+
+.orgActionButtons {
+    display: flex;
+    justify-content: flex-start;
+}

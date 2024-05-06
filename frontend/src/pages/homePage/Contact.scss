@@ -1,0 +1,206 @@
+/* Styles for the contact section */
+.contact_section_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: #ffffff;
+
+   /* Styles for the main container */
+  .container_container {
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 15px;
+    margin: 50px 0;
+
+    @media screen and (min-width: 1024px) {
+      width: 90%;
+      height: 617px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+      box-shadow: none;
+      margin-top: 20px;
+      flex-direction: column;
+    }
+  }
+
+    /* Styles for the Google Map iframe */
+  .gmap_iframe {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 27px;
+
+    @media screen and (min-width: 1024px) {
+      height: 518px;
+      border-radius: 9px;
+    }
+  }
+
+   /* Styles for the Google Map location section */
+  .google_map_location {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+
+    @media screen and (min-width: 1024px) {
+      width: 80%;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+
+    /* Styles for the basic contact user form section */
+  .basic_contact_user_form {
+    width: 50%;
+    padding: 50px;
+    border-radius: 9px;
+    background: #fff;
+
+    @media screen and (min-width: 1024px) {
+      padding: 25px;
+      width: 490px;
+      margin-right: 20px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 20px;
+    }
+  }
+
+  .time_table {
+    h2 {
+      span {
+        margin-right: 9px;
+      }
+    }
+
+    & {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      margin-bottom: 9px;
+    }
+  }
+
+  .d_and_c {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    height: 115px;
+
+    @media screen and (max-width: 480px) {
+      justify-content: space-evenly;
+      height: 153px;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .call_to_office {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 45px;
+    outline: 2px solid #003380;
+
+    a {
+      text-decoration: none;
+      font-size: 15px;
+      color: #003380;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 80%;
+    }
+  }
+
+  .office_timing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid;
+    height: 60px;
+    padding: 12px;
+
+    @media screen and (min-width: 1024px) {
+      height: 52px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 100%;
+    padding: 30px 0;
+
+    .container_container {
+      margin-top: 20px;
+    }
+
+    .d_and_c {
+      height: 153px;
+    }
+
+    .call_to_office {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .container_container {
+    margin-top: 20px;
+  }
+}
+
+.copyright_footer {
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background: #141b2c;
+  flex-wrap: wrap;
+
+  span {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 72px;
+    margin-bottom: 36px;
+
+    p {
+      width: 80%;
+      text-align: center;
+    }
+  }
+}

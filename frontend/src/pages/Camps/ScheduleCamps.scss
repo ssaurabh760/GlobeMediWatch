@@ -1,0 +1,86 @@
+/* Import a custom Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.health-camp-wrapper {
+  display: flex;
+  background: url('./../../assets/Images/volunteerFormBgr.webp');
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: calc(100vh - 120px);
+  background-color: #f4f4f9; /* Light background for the whole page */
+}
+
+.health-camp-form-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+  font-family: 'Roboto', sans-serif; /* Using a modern, clean font */
+}
+
+.health-camp-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.health-camp-label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.health-camp-input,
+.health-camp-textarea,
+.health-camp-select {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.health-camp-input:focus,
+.health-camp-textarea:focus,
+.health-camp-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0,86,179,0.2); /* Adding focus effect */
+}
+
+.health-camp-textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.health-camp-submit-button {
+  padding: 12px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.health-camp-submit-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .health-camp-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .health-camp-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

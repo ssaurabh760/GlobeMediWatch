@@ -1,0 +1,24 @@
+meta {
+  name: get fundraiser by id
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3000/fundraisers/661d8f15c3fc4e16ebe9509b
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "_id": "661d8f15c3fc4e16ebe9509b",
+      "title": "Support Blood Donation Drive",
+      "description": " Participate in our Blood Donation Drive and make a life-saving difference in the community. Your generous donation of blood can help save the lives of those in emergency situations, undergoing surgeries, or battling serious illnesses. Join us in promoting awareness about the importance of regular blood donation and its impact on saving lives. Every pint of blood donated brings hope and healing to those in need. Let's come together to make a positive impact and support our local hospitals and patients.",
+      "goalAmount": 8000,
+      "currentAmount": 6200,
+      "associatedCampID": "661ee243d978557c0e46c751",
+      "donors": [],
+      "__v": 0
+    }
+}

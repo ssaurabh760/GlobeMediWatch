@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  height: 80px;
+  background: #fff;
+  padding: 0 20px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.navbar-logo h2 {
+  font-family: 'Cormorant', cursive;
+  font-size: 35px;
+  margin-left: 15px;
+  color: #1a237e;
+  white-space: nowrap;
+  padding-top: 5%;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  margin: 0 15px;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+}
+
+.navbar-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-item a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Additional styles for dropdown consistency */
+.dropbtn {
+  background: none; /* Removes any background styling */
+  color: #333; /* Sets text color to match other links */
+  padding: 0; /* Align padding with other navbar links */
+  border: none; /* Removes any borders */
+  font-family: 'Roboto', sans-serif; /* Ensures font consistency */
+  font-weight: 500; /* Matches font weight */
+  font-size: 16px; /* Ensures font size consistency */
+  cursor: pointer; /* Ensures cursor appears as pointer on hover */
+  outline: none; /* Removes focus outline */
+  text-decoration: none; /* No underline */
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  text-decoration: none; /* Ensures no underline on hover/focus */
+  color: #333; /* Keeps color consistent on hover */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a::after {
+  content: none;  /* Removes content from after pseudo-element */
+}
+
+/* Ensuring hover effect is consistent with other navbar items */
+.dropbtn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: #2d2c2c;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropbtn:hover::after {
+  transform: scaleX(1);
+}
+
+
+@media screen and (max-width: 900px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links.navbar-menu {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin: 10px 0;
+  }
+
+  .navbar-item a {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .navbar-item a:hover {
+    background-color: #f5f5f5;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-logo h2 {
+    font-size: 24px;
+    margin-left: 10px;
+    padding-top: 8%;
+  }
+}
+
+.language-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px; /* Adjust margin as needed */
+}
+
+.MuiToggleButtonGroup-root {
+  .MuiToggleButtonGroup-grouped {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+    &.Mui-selected {
+      background-color: #1a237e;
+      color: #fff;
+      border-color: #007bff;
+      &:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+    }
+  }
+}

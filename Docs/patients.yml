@@ -1,0 +1,361 @@
+openapi: 3.1.0
+info:
+  title: Patients API
+  description: This API manages patients records.
+  version: '1.0'
+servers:
+  - url: http://localhost:8080
+paths:
+  /patients:
+    post:
+      summary: Create a new patient
+      operationId: createPatient
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patient'
+            examples:
+              newPatientExample:
+                summary: A complete patient example
+                value:
+                  patientID: 12345
+                  name: John Doe
+                  age: 30
+                  gender: Male
+                  medicalHistory: "Previous conditions of note"
+                  currentConditions: "None"
+                  campsAttended:
+                    - campID: 1
+                      campName: "Health Camp 2021"
+                      dateAttended: "2021-05-15"
+      responses:
+        '201':
+          description: Successfully created patient
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patient'
+              examples:
+                patientCreatedExample:
+                  summary: Example of a created patient with extended details
+                  value:
+                    patientID: 12345
+                    name: John Doe
+                    age: 30
+                    gender: Male
+                    medicalHistory: "Previous conditions of note"
+                    currentConditions: "None"
+                    campsAttended:
+                      - campID: 1
+                        campName: "Health Camp 2021"
+                        dateAttended: "2021-05-15"
+        '400':
+          description: Invalid request data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                invalidRequest:
+                  summary: Example of an invalid request response
+                  value:
+                    code: 400
+                    message: Invalid request data
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                internalError:
+                  summary: Example of an internal server error response
+                  value:
+                    code: 500
+                    message: "Internal server error"
+    get:
+      summary: Retrieve all patients
+      operationId: getAllPatients
+      responses:
+        '200':
+          description: A list of patients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patient'
+              examples:
+                patientList:
+                  summary: Example list of patients
+                  value:
+                    - patientID: 123
+                      name: John Doe
+                      age: 30
+                      gender: Male
+                      medicalHistory: "No previous conditions"
+                      currentConditions: "Allergies"
+                      campsAttended:
+                        - campID: 2
+                          campName: "Wellness Camp 2022"
+                          dateAttended: "2022-08-20"
+                    - patientID: 124
+                      name: Jane Doe
+                      age: 28
+                      gender: Female
+                      medicalHistory: "Asthma"
+                      currentConditions: "None"
+                      campsAttended: []
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                internalError:
+                  summary: Example of an internal server error response
+                  value:
+                    code: 500
+                    message: "Internal server error"
+  /patients/{patientID}:
+    get:
+      summary: Retrieve a specific patient
+      operationId: getPatientById
+      parameters:
+        - name: patientID
+          in: path
+          required: true
+          description: The ID of the patient to retrieve
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '200':
+          description: A single patient
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patient'
+              examples:
+                specificPatient:
+                  summary: Example of a retrieved patient with detailed history
+                  value:
+                    patientID: 12345
+                    name: John Doe
+                    age: 30
+                    gender: Male
+                    medicalHistory: "Previous conditions of note"
+                    currentConditions: "None"
+                    campsAttended:
+                      - campID: 1
+                        campName: "Health Camp 2021"
+                        dateAttended: "2021-05-15"
+        '404':
+          description: Patient not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                notFound:
+                  summary: Example of a not found response
+                  value:
+                    code: 404
+                    message: Patient not found
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                internalError:
+                  summary: Example of an internal server error response
+                  value:
+                    code: 500
+                    message: "Internal server error"
+    put:
+      summary: Update a specific patient
+      operationId: updatePatient
+      parameters:
+        - name: patientID
+          in: path
+          required: true
+          description: The ID of the patient to update
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patient'
+            examples:
+              janeDoeUpdate:
+                summary: Example of patient update data
+                value:
+                  patientID: 12345
+                  name: Jane Doe
+                  age: 29
+                  gender: Female
+                  medicalHistory: "Updated medical history"
+                  currentConditions: "Updated conditions"
+                  campsAttended:
+                    - campID: 2
+                      campName: "Wellness Camp 2022"
+                      dateAttended: "2022-08-20"
+      responses:
+        '200':
+          description: Successfully updated patient
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patient'
+              examples:
+                patientUpdated:
+                  summary: Example of an updated patient with detailed information
+                  value:
+                    patientID: 12345
+                    name: Jane Doe
+                    age: 29
+                    gender: Female
+                    medicalHistory: "Updated medical history"
+                    currentConditions: "Updated conditions"
+                    campsAttended:
+                      - campID: 2
+                        campName: "Wellness Camp 2022"
+                        dateAttended: "2022-08-20"
+        '400':
+          description: Invalid request data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                invalidUpdate:
+                  summary: Example of an invalid update response
+                  value:
+                    code: 400
+                    message: Invalid request data
+        '404':
+          description: Patient not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                notFoundUpdate:
+                  summary: Example of a not found response for update
+                  value:
+                    code: 404
+                    message: Patient not found
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                internalErrorUpdate:
+                  summary: Example of an internal server error response
+                  value:
+                    code: 500
+                    message: "Internal server error"
+    delete:
+      summary: Delete a specific patient
+      operationId: deletePatient
+      parameters:
+        - name: patientID
+          in: path
+          required: true
+          description: The ID of the patient to delete
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '204':
+          description: Successfully deleted patient
+        '404':
+          description: Patient not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                notFoundDelete:
+                  summary: Example of a not found response for deletion
+                  value:
+                    code: 404
+                    message: Patient not found
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                internalErrorDelete:
+                  summary: Example of an internal server error response
+                  value:
+                    code: 500
+                    message: "Internal server error"
+
+components:
+  schemas:
+    Patient:
+      type: object
+      properties:
+        patientID:
+          type: integer
+          format: int64
+          description: The unique identifier for the patient
+        name:
+          type: string
+          description: The name of the patient
+        age:
+          type: integer
+          description: The age of the patient
+        gender:
+          type: string
+          description: The gender of the patient
+        medicalHistory:
+          type: string
+          description: Detailed medical history of the patient
+        currentConditions:
+          type: string
+          description: Current medical conditions of the patient
+        campsAttended:
+          type: array
+          items:
+            $ref: '#/components/schemas/Camp'
+          description: List of camps attended by the patient
+    Camp:
+      type: object
+      properties:
+        campID:
+          type: integer
+          format: int64
+          description: The unique identifier for the camp
+        campName:
+          type: string
+          description: The name of the camp
+        dateAttended:
+          type: string
+          format: date
+          description: The date when the patient attended the camp
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: "Error code"
+        message:
+          type: string
+          description: "Error message"

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "HealthOrgAPI",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

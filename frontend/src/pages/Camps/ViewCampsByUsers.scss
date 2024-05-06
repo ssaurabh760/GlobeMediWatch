@@ -1,0 +1,87 @@
+/* Importing Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.unique-healthcamp-layout-container {
+    padding: 20px; /* Space around the content within the container */
+    margin-top: 60px; /* Additional space for the header */
+    margin-bottom: 60px; /* Additional space for the footer */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between grid items */
+    min-height: 60vh; /* Adjusting height to minimum rather than fixed to accommodate header/footer */
+    overflow: auto; 
+}
+
+.unique-healthcamp-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* Adjust the gap size based on preference */
+  width: 75%;
+}
+
+.unique-healthcamp-card-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: rgb(233, 234, 227); /* Bright but subtle background color */
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+.unique-healthcamp-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.unique-healthcamp-card-title, .unique-healthcamp-card-date {
+  margin-bottom: 10px;
+}
+
+.unique-healthcamp-card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #0056b3; /* Theme color for titles */
+}
+
+.unique-healthcamp-card-date {
+  font-size: 1rem;
+  color: #666;
+}
+
+.unique-healthcamp-details-container {
+  cursor: pointer;
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0; /* Light grey for contrast */
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.unique-healthcamp-details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.hc-view-details-name, .hc-view-details-date, .hc-view-details-desc, .hc-view-details-addr {
+  margin-bottom: 15px;
+}
+
+.hc-view-details-name {
+
+  font-size: 1.5rem;
+  color: #0044cc;
+}
+
+.hc-view-details-date, .hc-view-details-desc, .hc-view-details-addr {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.hc-view-details-empty {
+  font-size: 1.2rem;
+  color: #888;
+  text-align: center;
+}
+

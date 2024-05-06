@@ -1,0 +1,181 @@
+/**
+ * This SCSS file is responsible for styling the "About" section of the Data Visualization page.
+ * It contains styles specific to the about section, such as font styles, colors, and layout.
+ * The styles defined here will be applied to the HTML elements within the "About" section.
+ */
+//
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap");
+.about_section_container {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+.about_container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.about_infos {
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #666;
+}
+.about_short_descrp {
+  font-size: 27px;
+  text-align: left;
+  font-weight: 500;
+  color: #333;
+}
+.about_long_descrp {
+  text-align: left;
+  margin: 10px 10px 0px 0px;
+  color: #666;
+}
+.about_align_btn {
+  display: flex;
+  width: 99%;
+}
+
+.about_title {
+  width: 80%;
+  color: #333;
+}
+.about_title .about_title_logo {
+  margin-right: 9px !important;
+}
+
+.about_image img {
+  width: 403px;
+  border-radius: 9px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.about_image img:hover {
+  transform: scale(1.05);
+}
+@media screen and (min-width: 1024px) {
+  .about_title {
+    position: relative;
+    top: 76px;
+    width: 85%;
+  }
+  .about_container {
+    width: 90%;
+    height: 550px;
+    margin-top: 10px;
+  }
+  .about_infos {
+    width: 651px;
+    height: 374px;
+  }
+  .about_image img {
+    width: 462px;
+    height: 311px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .about_container {
+    height: 90vh;
+    width: 90%;
+  }
+  .about_infos {
+    padding: 20px;
+  }
+  .about_title {
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: -39px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .about_container {
+    height: 80vh;
+  }
+  .about_container {
+    flex-direction: column;
+  }
+  .about_title {
+    width: 90%;
+  }
+  .about_infos {
+    margin-bottom: 61px;
+    margin-top: 47px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .about_container {
+    flex-direction: column;
+    height: 800px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .about_container {
+    margin-top: 46px;
+  }
+  .about_infos {
+    margin-top: 20px;
+  }
+  .about_image {
+    margin-top: 20px;
+    margin-bottom: 55px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about_title {
+    font-size: 27px;
+    margin: 53px 0px 0px 0px !important;
+  }
+  .about_infos {
+    margin-bottom: 20px;
+  }
+  .about_image {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .about_image img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about_infos {
+    padding: 20px;
+  }
+  .about_container {
+    margin-top: 0;
+  }
+  .more_info_btn {
+    background: transparent;
+    color: #4caf50;
+    outline: 1px solid #4caf50;
+    border: none;
+    border-radius: 6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about_container {
+    height: 100%;
+  }
+}

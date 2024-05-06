@@ -1,0 +1,20 @@
+meta {
+  name: delete service by ID
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/services/661998b4817718eb485f7aac
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "serviceName": "Medical Checkup updated",
+    "description": "Comprehensive medical examination including physical examination, laboratory tests, and medical history review.",
+    "offeredBy": "6609f5c3e89127eb8ca42915"
+  }
+  
+}

@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+/**
+ * This file contains the styling for the footer section of the home page.
+ */
+//
+.footer {
+  position: relative;
+  width: 100%;
+  background: #2c3d99;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+}
+
+.footer-split {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  max-width: 500px;
+  float: left;
+  margin-left: 5em;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 30em;
+  margin-top: -1em;
+  float: right;
+}
+
+.footer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  max-width: max-content;
+  background-color: rgba(255, 255, 255, 0.188);
+  border-radius: 100px;
+  color: #ffffff;
+  line-height: 0;
+  margin: 0.4em 0;
+  font-size: 1rem;
+  padding: 0 1.3em;
+}
+
+.footer__btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+address {
+  font-style: normal;
+  color: #ffffff;
+}
+
+.social-icon,
+.menuu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .footer-left {
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+
+  .footer-right {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+}

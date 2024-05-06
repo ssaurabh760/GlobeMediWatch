@@ -1,0 +1,248 @@
+/**
+ * Primary color variable
+ */
+ $primary-color: #2c3e50;
+
+ /**
+  * Secondary color variable
+  */
+ $secondary-color: #34495e;
+ 
+ /**
+  * Text color variable
+  */
+ $text-color: #ecf0f1;
+ 
+ /**
+  * Background color variable
+  */
+ $background-color: #f4f7fa;
+ 
+ /**
+  * Sidebar width variable
+  */
+ $sidebar-width: 250px;
+ 
+ /**
+  * Sidebar width for mobile devices
+  */
+ $sidebar-width-mobile: 200px;
+ 
+ /**
+  * Mixin for box-shadow
+  * @param {string} $shadow - The box-shadow value
+  */
+ @mixin box-shadow($shadow) {
+   -webkit-box-shadow: $shadow;
+   -moz-box-shadow: $shadow;
+   box-shadow: $shadow;
+ }
+ 
+ /**
+  * Placeholder for chart base styles
+  */
+ %chart-base {
+   flex: 1;
+   padding: 10px;
+   border-radius: 8px;
+   background-color: #fff;
+ }
+ 
+ /**
+  * Basic reset styles
+  */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ /**
+  * Body styles
+  */
+ body {
+   font-family: 'Arial', sans-serif;
+ }
+ 
+ /**
+  * Dashboard container styles
+  */
+ .dashboard-container {
+   display: flex;
+   min-height: 100vh;
+   background-color: $background-color;
+ 
+   @media screen and (max-width: 768px) {
+     flex-direction: column;
+   }
+ }
+ 
+ /**
+  * Sidebar styles
+  */
+ .sidebar {
+   width: $sidebar-width;
+   background-color: $primary-color;
+   color: $text-color;
+   min-height: 100vh;
+   padding: 20px;
+ 
+   @media screen and (max-width: 768px) {
+     width: 100%;
+     min-height: auto;
+     padding: 10px;
+   }
+ 
+   h1 {
+     font-size: 24px;
+     text-align: center;
+     margin-bottom: 40px;
+ 
+     @media screen and (max-width: 768px) {
+       font-size: 20px;
+       margin-bottom: 20px;
+     }
+   }
+ 
+   a {
+     text-decoration: none;
+     color: $text-color;
+     display: block;
+     padding: 10px;
+     transition: background-color 0.3s;
+ 
+     &:hover {
+       background-color: $secondary-color;
+     }
+   }
+ }
+ 
+ /**
+  * Main content styles
+  */
+ .main-content {
+   flex-grow: 1;
+   padding: $sidebar-width / 12.5;
+ 
+   @media screen and (max-width: 768px) {
+     padding: 20px;
+   }
+ }
+ 
+ /**
+  * Heading styles
+  */
+ h2 {
+   color: $secondary-color;
+   margin-bottom: 20px;
+ }
+ 
+ /**
+  * Chart box styles
+  */
+ .chart-box {
+   background: white;
+   padding: 15px;
+   border-radius: 8px;
+   @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+   margin-bottom: 20px;
+ }
+ 
+ /**
+  * Recharts custom styles
+  */
+ .recharts-wrapper {
+   user-select: none;
+ }
+ 
+ .recharts-cartesian-axis-tick-value {
+   font-size: 12px;
+ }
+ 
+ /**
+  * Filters styles
+  */
+ .filters {
+   margin-bottom: 20px;
+ 
+   label {
+     margin-right: 10px;
+     font-size: 16px;
+   }
+ }
+ 
+ /**
+  * Data table styles
+  */
+ .data-table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-bottom: 20px;
+ 
+   th,
+   td {
+     border: 1px solid #ccc;
+     padding: 8px;
+     text-align: left;
+   }
+ 
+   th {
+     background-color: #f9f9f9;
+   }
+ 
+   @media screen and (max-width: 480px) {
+     font-size: 14px;
+ 
+     th,
+     td {
+       padding: 6px;
+     }
+   }
+ }
+ 
+ /**
+  * Chart container styles
+  */
+ .chart-container {
+   display: flex;
+   justify-content: space-around;
+   margin-bottom: 20px;
+ 
+   @media screen and (max-width: 768px) {
+     flex-direction: column;
+   }
+ }
+ 
+ /**
+  * Line chart styles
+  */
+ .line-chart {
+   @extend %chart-base;
+   margin-bottom: 20px;
+ 
+   p {
+     font-size: 16px;
+     margin-bottom: 5px;
+     text-align: center;
+   }
+ }
+ 
+ /**
+  * Pie chart styles
+  */
+ .pie-chart {
+   @extend %chart-base;
+ 
+   p {
+     font-size: 16px;
+     margin-bottom: 5px;
+     text-align: center;
+   }
+ }
+ 
+ /**
+  * Recharts responsive container styles
+  */
+ .recharts-responsive-container {
+   margin-top: 20px;
+ }

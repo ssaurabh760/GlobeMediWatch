@@ -1,0 +1,20 @@
+meta {
+  name: create service
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/services
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "serviceName": "Medical Checkup testing",
+    "description": "Comprehensive medical examination including physical examination, laboratory tests, and medical history review.",
+    "offeredBy": "6609f5c3e89127eb8ca42915"
+  }
+  
+}

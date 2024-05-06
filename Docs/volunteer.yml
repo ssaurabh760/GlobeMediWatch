@@ -1,0 +1,202 @@
+openapi: 3.0.0
+info:
+  title: Volunteer API Documentation
+  description: API documentation for managing volunteer-related operations
+  version: 'v1.0'
+servers:
+  - url: https://localhost:3000
+paths:
+  /volunteers:
+    post:
+      summary: Create a new volunteer
+      description: Registers a new volunteer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VolunteerRequest'
+      responses:
+        '201':
+          description: Volunteer created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Volunteer'
+    get:
+      summary: Retrieve all volunteers
+      description: Retrieves a list of all volunteers.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Volunteer'
+  /volunteers/{volunteerID}:
+    get:
+      summary: Retrieve a specific volunteer
+      description: Retrieves details of a specific volunteer.
+      parameters:
+        - in: path
+          name: volunteerID
+          description: ID of the volunteer to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Volunteer'
+    put:
+      summary: Update a specific volunteer
+      description: Updates details of a specific volunteer.
+      parameters:
+        - in: path
+          name: volunteerID
+          description: ID of the volunteer to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VolunteerRequest'
+      responses:
+        '200':
+          description: Volunteer updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Volunteer'
+        '404':
+          description: Volunteer not found
+    delete:
+      summary: Delete a specific volunteer
+      description: Deletes a specific volunteer.
+      parameters:
+        - in: path
+          name: volunteerID
+          description: ID of the volunteer to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '204':
+          description: Volunteer deleted successfully
+        '404':
+          description: Volunteer not found
+  /camps/{campID}/volunteers/{volunteerID}:
+    post:
+      summary: Volunteer for a camp
+      description: Registers a volunteer for a specific camp.
+      parameters:
+        - in: path
+          name: campID
+          description: ID of the camp to volunteer for
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 54321
+        - in: path
+          name: volunteerID
+          description: ID of the volunteer
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '201':
+          description: Volunteer registered for the camp successfully
+        '404':
+          description: Camp or volunteer not found
+    delete:
+      summary: Leave a camp
+      description: Removes a volunteer from a specific camp.
+      parameters:
+        - in: path
+          name: campID
+          description: ID of the camp
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 54321
+        - in: path
+          name: volunteerID
+          description: ID of the volunteer to remove
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 12345
+      responses:
+        '204':
+          description: Volunteer removed from the camp successfully
+        '404':
+          description: Camp or volunteer not found
+components:
+  schemas:
+    Volunteer:
+      type: object
+      properties:
+        volunteerID:
+          type: integer
+          format: int64
+          description: Unique identifier for the volunteer
+          example: 12345
+        name:
+          type: string
+          description: Name of the volunteer
+          example: Carlos Sainz
+        email:
+          type: string
+          format: email
+          description: Email address of the volunteer
+          example: john@example.com
+        phone:
+          type: string
+          description: Phone number of the volunteer
+          example: +1234567890
+        expertise:
+          type: string
+          description: Area of expertise of the volunteer
+          example: Medical Doctor
+    VolunteerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the volunteer
+          example: Carlos Sainz
+        email:
+          type: string
+          format: email
+          description: Email address of the volunteer
+          example: john@example.com
+        phone:
+          type: string
+          description: Phone number of the volunteer
+          example: +1234567890
+        expertise:
+          type: string
+          description: Area of expertise of the volunteer
+          example: Medical Doctor
+      required:
+        - name
+        - email

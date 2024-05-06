@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multiple Locations Map</title>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        const locations = [
+          { lat: 18.978293, lng: 73.030934, name: 'Location 1' },
+          { lat: 42.34764620007955, lng: -71.07491054517074, name: 'Location 2' },
+          { lat: 42.323921158222674, lng: -71.11108310284204, name: 'Location 3' },
+          { lat: 42.35957337860725, lng: -71.09305307215924, name: 'Location 4' }
+          // Add more locations here...
+        ];
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: { lat: 18.978293, lng: 73.030934 }, // Center the map around a default location
+        });
+
+        locations.forEach(location => {
+          new google.maps.Marker({
+            position: { lat: location.lat, lng: location.lng },
+            map,
+            title: location.name,
+          });
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+  </body>
+</html>
+

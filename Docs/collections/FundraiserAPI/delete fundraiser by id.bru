@@ -1,0 +1,22 @@
+meta {
+  name: delete fundraiser by id
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/fundraisers/6609f36d454b4ad00789703c
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "donate for Education for Underprivileged Children",
+    "description": "Help us provide quality education to children in need.",
+    "goalAmount": 10000,
+    "currentAmount": 5000,
+    "associatedCampID": 1234
+  }
+  
+}

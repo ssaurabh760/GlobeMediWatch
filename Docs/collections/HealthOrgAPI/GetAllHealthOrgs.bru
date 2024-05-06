@@ -1,0 +1,33 @@
+meta {
+  name: GetAllHealthOrgs
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/healthorgs/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "method": "POST",
+    "url": "http://localhost:3000/healthorgs",
+    "headers": {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIxOGFhNjUzYzM0ODA3ZTk5NjgwZWYiLCJpYXQiOjE3MTM0ODc5NzEsImV4cCI6MTcxMzc0NzE3MX0.5OymWo8OryIey8IPiPeh3wPXJ6a64jc_7AK3Vt9vBwU",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "organizationName": "Global Health Initiative",
+      "services": ["service_id_1", "service_id_2"],
+      "description": "This is a test description",
+      "camps": ["camp_id_1", "camp_id_2"],
+      "location": "Boston",
+      "date": "2024-04-18"
+    }
+  }
+  
+  
+  
+}
